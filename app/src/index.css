@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 60 6% 94%;
+    --card: 0 0% 4%;
+    --card-foreground: 60 6% 94%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 60 6% 94%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 60 6% 94%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 240 3% 55%;
+    --accent: 274 90% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 48 100% 50%;
+    --warning-foreground: 0 0% 0%;
+    --success: 145 63% 49%;
+    --success-foreground: 0 0% 100%;
+    --border: 0 0% 12%;
+    --input: 0 0% 10%;
+    --ring: 211 100% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 240 3% 55%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 7%;
+    --sidebar-accent-foreground: 60 6% 94%;
+    --sidebar-border: 0 0% 10%;
+    --sidebar-ring: 211 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#050505] text-[#F5F5F0] antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  code, pre, .mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+@layer utilities {
+  .text-critical { color: #FF3B30; }
+  .text-high { color: #FF9500; }
+  .text-medium { color: #FFCC00; }
+  .text-low { color: #30D158; }
+  .text-info { color: #0A84FF; }
+  .text-purple { color: #BF5AF2; }
+
+  .bg-critical { background-color: rgba(255, 59, 48, 0.12); }
+  .bg-high { background-color: rgba(255, 149, 0, 0.12); }
+  .bg-medium { background-color: rgba(255, 204, 0, 0.12); }
+  .bg-low { background-color: rgba(48, 209, 88, 0.12); }
+  .bg-info { background-color: rgba(10, 132, 255, 0.12); }
+  .bg-purple { background-color: rgba(191, 90, 242, 0.12); }
+
+  .border-critical { border-color: rgba(255, 59, 48, 0.3); }
+  .border-high { border-color: rgba(255, 149, 0, 0.3); }
+  .border-medium { border-color: rgba(255, 204, 0, 0.3); }
+  .border-low { border-color: rgba(48, 209, 88, 0.3); }
+  .border-info { border-color: rgba(10, 132, 255, 0.3); }
+  .border-purple { border-color: rgba(191, 90, 242, 0.3); }
+
+  .glow-critical { box-shadow: 0 0 12px rgba(255, 59, 48, 0.2); }
+  .glow-high { box-shadow: 0 0 12px rgba(255, 149, 0, 0.2); }
+  .glow-info { box-shadow: 0 0 12px rgba(10, 132, 255, 0.2); }
+  .glow-purple { box-shadow: 0 0 12px rgba(191, 90, 242, 0.2); }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(138, 138, 147, 0.3);
+    border-radius: 2px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(138, 138, 147, 0.5);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(10, 132, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(10, 132, 255, 0.6); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-scan-line {
+  animation: scan-line 4s linear infinite;
+}
+
+.animate-blink-cursor {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+@layer base {
+  input, textarea, select {
+    @apply bg-[#111111] border-[#1a1a1a] text-[#F5F5F0] placeholder:text-[#5A5A63];
+  }
+}
